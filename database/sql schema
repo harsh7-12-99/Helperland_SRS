@@ -1,0 +1,103 @@
+create database helperland
+use helperland
+
+create table Customers(
+ c_id INT NOT NULL PRIMARY KEY,
+ first_name nvarchar(50),
+ last_name nvarchar(50),
+ email nvarchar(50) UNIQUE NOT NULL,
+ passwrd nvarchar(10),
+ mobile varchar(10),
+ address_id INT FOREIGN KEY REFERENCES Addres(address_id)
+ );
+
+
+
+ create table Addres(
+ address_id INT NOT NULL PRIMARY KEY,
+ street_name nvarchar(50),
+ house_no nvarchar(10),
+ postal_code INT FOREIGN KEY REFERENCES City(postal_code)
+ );
+
+
+ create table City(
+ postal_code INT NOT NULL PRIMARY KEY,
+ city_name nvarchar(20)
+ );
+
+
+ create table visitors(
+ first_name nvarchar(20) NOT NULL,
+ last_name nvarchar(20) NOT NULL,
+ email nvarchar(30) NOT NULL,
+ mssege nvarchar(100) NOT NULL
+ );
+
+ create table Reschedule( 
+ order_id INT PRIMARY KEY ,
+ new_date DATE NOT NULL,
+ new_time TIME NOT NULL,
+ descrpt nvarchar(100)
+ );
+
+
+ create table cancel_order(
+ order_id INT PRIMARY KEY NOT NULL,
+ descrpt nvarchar(100)
+ );
+
+ create table Refund_details(
+ invoice_id int PRIMARY KEY,
+ refund_amount int NOT NULL,
+ descrpt nvarchar(100)
+ );
+
+
+ create table payment_details(
+ invoice_id int primary key not null,
+ amount int,
+ card_no nvarchar(20),
+ cvv nvarchar(3),
+ expiry_dte date,
+ promo_code nvarchar(16)
+ );
+
+ create table Invoice(
+ c_id INT PRIMARY KEY NOT NULL,
+ order_id INT foreign key REFERENCES orders(order_id) ,
+ invoice_id INT foreign key REFERENCES payment_details(invoice_id) 
+ );
+
+
+
+ create table orders(
+ order_id INT PRIMARY KEY ,
+ c_id INT UNIQUE,
+ order_date DATE,
+ hourss INT,
+ order_time TIME,
+ Extra_Service nvarchar(50),
+ comments nvarchar(100),
+ pets  bit,
+ accepted bit
+ );
+
+
+ create table Helper_feedback(
+ h_id INT PRIMARY KEY NOT NULL,
+ order_id int foreign key references orders(order_id),
+ stars int,
+ feedback nvarchar(100)
+ );
+
+
+ create table helpers(
+ h_id INT PRIMARY KEY NOT NULL,
+ first_name nvarchar(50),
+ last_name nvarchar(50),
+ email  nvarchar(50) unique,
+ passwrd nvarchar(10),
+ mobile varchar(10),
+ address_id int foreign key references Addres(address_id)
+ );
