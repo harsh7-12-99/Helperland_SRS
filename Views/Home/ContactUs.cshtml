@@ -1,0 +1,133 @@
+﻿@model Helperland.Models.ContactU
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Contact Us | Helperland";
+}
+
+<section>
+    <div class="d-flex mb-8">
+        <img src="~/Images/group-16_2.png" alt="" class="img-fluid custom-banner ">
+    </div>
+    <div class="container-fluid custom-margin mt-5 mb-10">
+        <div class="row  text-center">
+            <h1 class="custom-text-prices mt-5">Contact us</h1>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-2">
+            <div class="custom-separator-line me-3 mb-4"> </div>
+            <div> <img src="~/Images/forma-1-copy-5.png " class="img-fluid mb-4" alt=""></div>
+            <div class="custom-separator-line ms-3 mb-4"></div>
+        </div>
+
+
+
+
+        <div class="container d-flex flex-wrap flex-xl-nowrap flex-row justify-content-around mb-3">
+            <div class="d-flex flex-column align-items-center mb-5">
+                <div class=" d-flex justify-content-center align-items-center mb-2 ">
+                    <img src="~/Images/pin.png" class="img-fluid" alt="">
+                </div>
+                <div class="text-center mt-2 mb-1">1111 Lorem ipsum text 100,</div>
+                <div class="text-center mb-3">Lorem ipsum AB</div>
+            </div>
+
+
+            <div class="d-flex flex-column align-items-center mb-5">
+                <div class="d-flex justify-content-center align-items-center mb-2 ">
+                    <img src="~/Images/phone-call.png" class="img-fluid" alt="">
+                </div>
+                <div class="text-center mt-2 mb-1">+49 (40) 123 56 7890</div>
+                <div class="text-center mb-3">+49 (40) 987 56 0000</div>
+            </div>
+
+
+            <div class="d-flex flex-column align-items-center mb-5">
+                <div class=" d-flex justify-content-center align-items-center mb-2 ">
+                    <img src="~/Images/mailus.png" class="img-fluid" alt="">
+                </div>
+                <div class="text-center mt-2 mb-1">info@helperland.com</div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <hr>
+</div>
+
+<section>
+    <div class="s-2-p-1 price-top-border container d-flex flex-column justify-content-center pt-5">
+        <h2 class=" text-center fw-bold t-28 mt-4 mb-4">Get in touch with us</h2>
+        <form method="post" asp-controller="Home" asp-action="ContactUs">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <input type="text" class="form-control" asp-for="Name" id="firstName" placeholder="Name" style="height:46px;margin-bottom: 15px;">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="input-group" style="height:46px;margin-bottom: 15px;">
+                        <span class="input-group-text" style="height:46px;" id="basic-addon1">+49</span>
+                        <input type="text" class="form-control" id="phone" asp-for="PhoneNumber" placeholder="Mobile number"><br>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <input type="email" class="form-control" asp-for="Email" id="email" placeholder="Email" style="height:46px;margin-bottom: 15px;">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+
+                <div class="col-md-8">
+
+                    <input type="text" class="form-control mx-auto" asp-for="Subject" id="msg" placeholder="Subject" style="height:46px;margin-bottom: 15px;">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <textarea class="form-control mx-auto" placeholder="Message" asp-for="Message" id="message" style="height:146px;"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form_btn w-100 mt-3 d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn rounded-pill text-white" style="background-color: #29626d">
+                    Submit
+                </button>
+            </div>
+
+
+        </form>
+    </div>
+    <div class="mt-5 d-flex flex-column justify-content-center">
+        <img class="img-fluid" src="img/group-16.png" alt="" />
+    </div>
+</section>
+<section>
+    <div class="container-fluid  w-100 mt-5">
+        <div class="row ">
+            <div class="col-12 p-0 container-fluid">
+                <iframe class="custom-responsive-iframe container-fluid w-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.698049828245!2d72.50043579999999!3d23.0348564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8352e403437b%3A0xdc9d4dae36889fb9!2sTatvaSoft!5e0!3m2!1sen!2sin!4v1641532880196!5m2!1sen!2sin"
+                        style="border:0; height:400px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container-fluid mt-5 mb-5 d-flex justify-content-center">
+        <div class="d-flex flex-column justify-content-center">
+            <h4 class="text-center">GET OUR NEWSLETTER</h4>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <input class="newsletter-input" type="email" name="" id="" placeholder="email" />
+                <div> <button class="submit">Submit</button></div>
+            </div>
+        </div>
+    </div>
+</section>
