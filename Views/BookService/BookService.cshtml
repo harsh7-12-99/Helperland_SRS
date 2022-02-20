@@ -1,0 +1,602 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/css/bookservice.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Book Service</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-xl navbar-light custom-nav-color navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/Images/white-logo-transparent-background.png"
+                         class="img-fluid custom-logo" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
+                        <li class="nav-item text-center custom-navitems ms-xl-3 mt-xl-0 mt-2"></li>
+                        <a class="nav-link custom-navitems custom-nav-btn" aria-current="page" href="#">Book now</a>
+                        </li>
+                        <li class="nav-item text-center ms-xl-3 mt-xl-0 mt-2">
+                            <a class="nav-link custom-navitems custom-special" href="#">Prices and services</a>
+                        </li>
+                        <li class="nav-item text-center ms-xl-3 mt-xl-0 mt-2">
+                            <a class="nav-link custom-navitems" aria-current="page" href="#">
+                                Warranty
+                            </a>
+                        <li class="nav-item text-center ms-xl-3 mt-xl-0 mt-2">
+                            <a class="nav-link custom-navitems" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item text-center ms-xl-3 mt-xl-0 mt-2">
+                            <a class="nav-link custom-navitems " href="#">Contact us</a>
+                        </li>
+                        <li class="nav-item text-center ms-xl-3 mt-xl-0 mt-2">
+                            <a class="nav-link custom-navitems custom-nav-btn" href="#">login</a>
+                        </li>
+                        <li class="nav-item text-center ms-xl-3 mt-xl-0 mt-2 ">
+                            <a class="nav-link custom-navitems custom-nav-btn " href="#">Become a helper</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    </div>
+    <section>
+        <img class="img-fluid w-100" src="~/Images/book-service-banner.jpg" />
+    </section>
+    <div style="padding-bottom: 150px;">
+        <div class="d-flex flex-column align-items-center justify-content-center mt-5 position-relative">
+            <h1 class="text-center">Set up your cleaning service</h1>
+            <div class="d-flex align-items-center justify-content-center position-relative">
+                <div class="custom-separator-line me-3 mb-4"> </div>
+                <div> <img src="~/Images/forma-1-copy-5.png " class="img-fluid mb-4" alt=""></div>
+                <div class="custom-separator-line ms-3 mb-4"></div>
+            </div>
+        </div>
+
+        <section class="mt-5">
+            <div class="custom-mn row">
+                <div class="custom-lfpt col-sm-7">
+                    <div class="custom-mndt w-100">
+                        <ul class="nav nav-fill nav-tabs nav-pills justify-content-center mb-3" id="myTab"
+                            role="tablist">
+                            <li class="nav-item NavList" role="presentation" onclick="first()">
+                                <a class="nav-link active" id="setupServiceTabController" data-bs-toggle="tab"
+                                   data-bs-target="#setupServiceTab" type="button" aria-controls="setupService"
+                                   aria-selected="true">
+                                    <img src="~/Images/setup-service.png" alt="" class="nav_image">
+                                    <span class="custom-tldt">
+                                        <span class="custom-bgdt"></span>
+                                        <span class="nav_title">Setup Service</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item NavList" role="presentation" onclick="second()">
+                                <a class="nav-link" id="schedulePlanTabController" data-bs-toggle="tab"
+                                   data-bs-target="#schedulePlanTab" type="button" aria-controls="schedulePlan"
+                                   aria-selected="false">
+                                    <!-- data-bs-target="#schedulePlanTab" -->
+                                    <img src="~/Images/schedule.png" alt="" id="ig2">
+                                    <span class="custom-tldt">
+                                        <span class="custom-bgdt"></span>
+                                        <span class="ms-2 nav_title">Schedule & Plan</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item NavList" role="presentation">
+                                <a class="nav-link" id="yourDetailsTabController" data-bs-toggle="tab"
+                                   data-bs-target="#yourDetailsTab" type="button" aria-controls="yourDetails"
+                                   aria-selected="false">
+                                    <img src="~/Images/details.png" alt="">
+                                    <span class="custom-tldt">
+                                        <span class="custom-bgdt"></span>
+                                        <span class="ms-2 nav_title">Your Details</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item NavList" role="presentation">
+                                <a class="nav-link" id="makePaymentTabController" data-bs-toggle="tab"
+                                   data-bs-target="#makePaymentTab" type="button" aria-controls="makePayment"
+                                   aria-selected="false">
+                                    <img src="~/Images/payment.png" alt="">
+                                    <span class="custom-tldt">
+                                        <span class="custom-bgdt"></span>
+                                        <span class="ms-2 nav_title">Make Payment</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-4" id="myTabContent">
+                            <!-- ------- setup services ---------  -->
+                            <div class="tab-pane fade show mt-3 custom-clscn active" id="setupServiceTab"
+                                 role="tabpanel" aria-labelledby="setupService">
+                                <form class="row" id="postalCodeForm" onsubmit='
+                                    $("#schedulePlanTabController").prop("disabled" , false);
+                                    document.getElementById("schedulePlanTabController").click();
+                                    return false;
+                                '>
+                                    <!-- <form class="row" id="postalCodeForm"> -->
+                                    <p class="fw-bold mb-1">Enter Your Postal Code</p>
+                                    <div class="d-flex custom-hyper custom-pstcd">
+                                        <input class="form-control me-2" required placeholder="Postal code"
+                                               id="inputPincode">
+                                        <button class="nav-link text-light custom-gnbtn rounded-pill form-control"
+                                                type="submit" id="btnCheckZipcode">
+                                            Check Availability
+                                        </button>
+
+                                        <span class="text-danger" id="ErrorZipCode"></span>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" role="tabpanel" id="schedulePlanTab"
+                                 aria-labelledby="schedulePlan">
+                                @Html.Partial("ScheduleandPlan");
+                            </div>
+
+
+                                <div class="tab-pane fade" role="tabpanel" id="yourDetailsTab"
+                                     aria-labelledby="yourDetails">
+                                    @Html.Partial("Details")
+
+                                </div>
+
+                                <div class="tab-pane fade" role="tabpanel" id="makePaymentTab"
+                                     aria-labelledby="makePayment">
+                                    <p class="font-weight-bold" style="color: grey;">
+                                        Pay securely with Helperland payment
+                                        gateway!
+                                    </p>
+                                    <p>Promo code (optional)</p>
+                                    <form action="" id="bookForm" class="">
+                                        <div class="">
+                                            <div class="form-group mx-sm-1 mb-2">
+                                                <label for="inputPassword2" class="sr-only">Promocode</label>
+                                                <input type="password" style="width: 900px;" class="form-control col-sm-4"
+                                                       id="inputPassword2" placeholder="Promo code (optional)">
+                                            </div>
+                                            <button type="submit"
+                                                    class="d-inline ml-2 mb-2 rounded-pill custom-nadbtn">
+                                                Apply
+                                            </button>
+                                        </div>
+                                        <hr>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="cc-number" class="control-label">Card number</label>
+                                                <input id="cr_no" name="cc-number" type="tel"
+                                                       class="form-control cc-number identified visa" value="" data-val="true"
+                                                       placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label">Expiration</label>
+                                                    <input id="exp" name="cc-exp" type="tel" class="form-control cc-exp"
+                                                           value="" data-val="true"
+                                                           data-val-required="Please enter the card expiration"
+                                                           data-val-cc-exp="Please enter a valid month and year"
+                                                           placeholder="MM / YY" autocomplete="cc-exp" minlength="5"
+                                                           maxlength="5">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                          data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label for="x_card_code" class="control-label">CVV</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="x_card_code" type="password"
+                                                           class="form-control cc-cvc" value="" data-val="true"
+                                                           data-val-required="Please enter the security code"
+                                                           data-val-cc-cvc="Please enter a valid security code"
+                                                           autocomplete="off" minlength="3" maxlength="3"
+                                                           placeholder="&#9679;&#9679;&#9679;">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-end">
+                                            <div class="d-block"><small>Accepted Cards</small></div>
+                                        </div>
+                                        <div class="d-flex justify-content-end">
+                                            <div>
+                                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox" name="acceptterms" id="acceptterms" required>
+                                            <label for="acceptterms" class="ms-4 mt-4">
+                                                I accept <a href="" class="custom-clr">terms and conditions</a>,<a href=""
+                                                                                                                   class="custom-clr"> the cancellation policy</a> and the <a href=""
+                                                                                                                                                                              class="custom-clr">privacy policy</a>. I confirm that Helperland starts
+                                                to
+                                                execute the contract before the expiry of the withdrawal period and I lose
+                                                my right of withdrawal as a consumer with full performance of the contract.
+                                            </label>
+                                        </div>
+                                        <hr class="mt-3 mb-3 lne">
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit"
+                                                    class="custom-gnbtn2 my-2 text-light rounded-pill fw-bolder justify-content-end">
+                                                Complete Booking
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+                <div class="custom-rtpt col-sm-5" id="bookService_Right">
+                    <div class="parts">
+                        <div class="custom-pys">
+                            <h3 class="custom-pyhdr"> Payment Summary</h3>
+                            <div class="custom-pad custom-borbot">
+                                <div>
+                                    <p class="mb-0 fw-bold">Duration</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-0">Basic</p>
+                                        <p class="mb-0">3 Hrs</p>
+                                    </div>
+                                    <hr>
+                                    <table class="w-100" id="extraTable">
+                                        <thead>
+                                        <td class="fw-bold">Extras</td>
+                                        <td width="60px"></td>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p class="mb-0 fw-bold">Total Service Time</p>
+                                    <p class="mb-0 fw-bold"><span id="totalService">3</span>&nbsp;hours</p>
+                                </div>
+                            </div>
+                            <div class="custom-borbot d-flex justify-content-between custom-pad">
+                                <p class="mb-0">Per cleaning</p>
+                                <p class="mb-0 fw-bold"><span id="clean">54</span>&nbsp;€</p>
+                            </div>
+                            <div class="custom-pad">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p class="custom-totpmt mb-0">Total Payment</p>
+                                    <p class="custom-lgpy mb-0"><span id="totalPay">54</span>&nbsp;€</p>
+                                </div>
+                                <p class="mb-0 custom-smsz pt-1">According to 19 UStG no sales tax is calculated.</p>
+                                <div class="d-flex justify-content-between mt-2 mb-2">
+                                    <p class="custom-totpmt mb-0">Effective Price</p>
+                                    <p class="mb-0 fw-bold" id="effect"><span id="EffectivePay"> 54 </span> €</p>
+                                </div>
+                                <p class="mb-0 custom-smsz">
+                                    <span style="color:red" ;>*</span>You will save 20%
+                                    according
+                                    to 35a EStG.
+                                </p>
+                            </div>
+                            <div class="custom-pad custom-pbtm">
+                                <a href="" class="text-decoration-none">
+                                    <span style="font-size: 30px">&#9787;</span>&nbsp;See what is always included
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-fqpg custom-clscn mt-4">
+                        <h4 class="text-center">Questions?</h4>
+                        <div class="accordion position-relative w-100" id="accordionCustomer">
+                            <div class="accordion-item border-0 border-bottom">
+                                <div class="accordion-header d-flex align-items-center" id="headingOne">
+                                    <button class="accordion-button btn collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                            aria-controls="collapseOne">
+                                    </button>
+                                    <p class="mb-0 ms-3">What's included in a cleaning?</p>
+                                </div>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                     data-bs-parent="#accordionCustomer">
+                                    <div class="accordion-body fw-bold">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius accusamus
+                                        adipisci quidem, quaerat, velit impedit minus distinctio, laboriosam error
+                                        itaque corrupti numquam? Blanditiis, aliquam iste?
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 border-bottom">
+                                <div class="accordion-header d-flex align-items-center" id="headingTwo">
+                                    <button class="accordion-button btn collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseOne">
+                                    </button>
+                                    <p class="mb-0 ms-3">Which Helperland professional will come to my place?</p>
+                                </div>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                     data-bs-parent="#accordionCustomer">
+                                    <div class="accordion-body fw-bold">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, adipisci.
+                                        Dignissimos, libero. Quas et voluptate voluptas unde doloremque magnam iusto
+                                        corporis praesentium cupiditate? Quo, accusamus et ratione quis dolor quibusdam
+                                        quam consequatur nisi corrupti, blanditiis, ea labore. Magni eaque a, officiis
+                                        eum laborum id minus, quam ducimus consequatur quibusdam enim!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 border-bottom">
+                                <div class="accordion-header d-flex align-items-center" id="headingThree">
+                                    <button class="accordion-button btn collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                    </button>
+                                    <p class="mb-0 ms-3">Can I skip or reschedule bookings?</p>
+                                </div>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                     aria-labelledby="headingThree" data-bs-parent="#accordionCustomer">
+                                    <div class="accordion-body fw-bold">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum itaque nam hic
+                                        quibusdam aut, consequuntur cupiditate odit iste accusamus repellendus est non,
+                                        corporis iusto omnis illum, veritatis aperiam placeat vitae!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="faq.html" class="fw-bold custom-gtfq text-decoration-none"> For more help</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" id="successModal" aria-hidden="true" aria-labelledby="successModalLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="custom-cmplbk rounded-circle mb-3">
+                            <img src="~/Images/ic-check.png" alt="" height="23" width="23">
+                        </div>
+                        <div class="text-center">
+                            <h4 class="mb-2">Booking submitted successfully</h4>
+                            <p>Service id: 1234</p>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn custom-gnbtn text-white rounded-pill"
+                                    data-bs-dismiss="modal" aria-label="Close" style="min-width: 60px;">
+                                Ok
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_section w-100" style="margin-top: -150px;">
+        <div class="footer_main d-flex justify-content-center align-items-center position-relative">
+            <div class="d-flex justify-content-between h-100 align-items-center footer_inner position-relative">
+                <div class="footer_left">
+                    <a href="../Homepage/home.html">
+                        <img src="~/Images/white-logo-transparent-background.png" alt="" height="78" width="106">
+                    </a>
+                </div>
+                <div class="footer_mid">
+                    <ul class="d-flex p-0 text-center m-0">
+                        <li>
+                            <a href="homepage.html" class="text-decoration-none">HOME</a>
+                        </li>
+                        <li>
+                            <a href="About.html" class="text-decoration-none">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none">TESTIMONIAL</a>
+                        </li>
+                        <li>
+                            <a href="faq.html" class="text-decoration-none">FAQS</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none">INSURANCE POLICY</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-decoration-none">IMPRESSUM</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="footer_end d-flex align-items-center justify-content-center position-relative">
+            <p class="m-0 text-center">
+                ©2018 Helperland. All rights reserved. &nbsp;&nbsp;<span>
+                    <a href=""
+                       class="text-decoration-none">Terms and Conditions</a>
+                </span> | <span>
+                    <a href=""
+                       class="text-decoration-none">Privacy Policy</a>
+                </span>
+            </p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".tog").click(function () {
+                $('img', this).toggle();
+            });
+        });
+        var i, hrs = 3,
+            price = 54;
+
+        $('#cabinet').change(function () {
+            if (this.checked) {
+                extraTableBody = $("#extraTable tbody");
+                extraTableBody.append("<tr id='cabinetRow'><td>Clean cabinet interiors</td><td>30 mins</td></tr>");
+                hrs = hrs + 0.5;
+                $("#totalService").html(hrs);
+                price = price + 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            } else {
+                hrs = hrs - 0.5;
+                price = price - 9;
+                $("#clean").html(price);
+                $("#totalService").html(hrs);
+                $("#cabinetRow").remove();
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            }
+
+        });
+
+        $('#refrigerator').change(function () {
+            if (this.checked) {
+                extraTableBody = $("#extraTable tbody");
+                extraTableBody.append("<tr id='refrigeratorRow'><td>Cleaning the refrigerator</td><td>30 mins</td></tr>");
+                hrs = hrs + 0.5;
+                $("#totalService").html(hrs);
+                price = price + 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            } else {
+                $("#refrigeratorRow").remove();
+                hrs = hrs - 0.5;
+                $("#totalService").html(hrs);
+                price = price - 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            }
+
+        });
+
+        $('#oven').change(function () {
+            if (this.checked) {
+                extraTableBody = $("#extraTable tbody");
+                extraTableBody.append("<tr id='ovenRow'><td>Cleaning the oven</td><td>30 mins</td></tr>");
+                hrs = hrs + 0.5;
+                $("#totalService").html(hrs);
+                price = price + 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            } else if (!this.checked) {
+                $("#ovenRow").remove();
+                hrs = hrs - 0.5;
+                $("#totalService").html(hrs);
+                price = price - 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            }
+
+        });
+
+        $('#laundry').change(function () {
+            if (this.checked) {
+                extraTableBody = $("#extraTable tbody");
+                extraTableBody.append("<tr id='laundryRow'><td>Wash and dry laundry</td><td>30 mins</td></tr>");
+                hrs = hrs + 0.5;
+                $("#totalService").html(hrs);
+                price = price + 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            } else if (!this.checked) {
+                $("#laundryRow").remove();
+                hrs = hrs - 0.5;
+                $("#totalService").html(hrs);
+                price = price - 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            }
+        });
+
+        $('#windows').change(function () {
+            if (this.checked) {
+                extraTableBody = $("#extraTable tbody");
+                extraTableBody.append("<tr id='windowsRow'><td>Clean windows</td><td>30 mins</td></tr>");
+                hrs = hrs + 0.5;
+                $("#totalService").html(hrs);
+                price = price + 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            } else if (!this.checked) {
+                $("#windowsRow").remove();
+                hrs = hrs - 0.5;
+                $("#totalService").html(hrs);
+                price = price - 9;
+                $("#clean").html(price);
+                $("#totalPay").html(price);
+                $("#EffectivePay").html(price)
+            }
+        });
+
+        $(document).ready(function () {
+            $("#btnCheckZipcode").on("click", function () {
+                var x = $("#inputPincode").val();
+                if (x.length != 6) {
+                    $("#ErrorZipCode").text("Enter a valid zipcode");
+                    return;
+                }
+            })
+            $(document).click(function (event) {
+                var clickover = $(event.target);
+                var _opened = $(".navbar-collapse").hasClass("show");
+                if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+                    $(".navbar-toggler").click();
+                }
+            });
+        });
+        $("#bookForm").submit(function (e) {
+            $("#successModal").modal("show");
+            e.preventDefault();
+        });
+    </script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+            integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+            crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
