@@ -1,0 +1,118 @@
+﻿@model Helperland.Models.ServiceRequestAddress;
+
+
+        <form method="post" asp-controller="BookService" asp-action="Details" id="yourDetailsForm" onsubmit='
+                                    $("#makePaymentTabController").prop("disabled" , false);
+                                    document.getElementById("makePaymentTabController").click();
+                                    return false;'>
+            <p class="fw-bold">
+                Enter your contact details, so we can serve you in better way!
+            </p>
+            <ul class="custom-ya p-0">
+                <li class="custom-yadt px-3 py-2 my-2">
+                    <label class="d-flex align-items-center">
+                        <input type="radio" id="address1" name="address" checked>
+                        <div class="ms-4">
+                            <p class="mb-1">
+                                <b style="color: grey;">Address:</b>
+                                abcd
+                            </p>
+                            <p class="mb-1">
+                                <b style="color: grey;">Phone number:</b>
+                                123456789
+                            </p>
+                        </div>
+                    </label>
+                </li>
+                <li class="custom-yadt px-3 py-2 my-2">
+                    <label class="d-flex align-items-center">
+                        <input type="radio" id="address1" name="address">
+                        <div class="ms-4">
+                            <p class="mb-1">
+                                <b style="color: grey;">Address:</b>
+                                abcd
+                            </p>
+                            <p class="mb-1">
+                                <b style="color: grey;">Phone number:</b>
+                                123456789
+                            </p>
+                        </div>
+                    </label>
+                </li>
+            </ul>
+            <input type="button" class="btn custom-nadbtn px-4 mt-3 rounded-pill fw-bolder"
+                   value="+ Add New Address" data-bs-toggle="collapse" href="#newAddressCollapse"
+                   role="button" aria-expanded="false" aria-controls="newAddressCollapse">
+            <hr class="mt-4 mb-3">
+        </form>
+        <div class="my-3 collapse multi-collapse custom-nwad" id="newAddressCollapse">
+            <form method="post" asp-controller="BookService" asp-action="Details">
+                <div class="row newAddress_form">
+                    <div class="col-sm-6 mb-4">
+                        <div class="form-group d-flex flex-column">
+                            <label>Street Name</label>
+
+                            <input type="text" placeholder="Street Name"
+                                   asp-for="AddressLine1" class="custom-borlft custom-hyper custom-padin w-100">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <div class="form-group d-flex flex-column">
+                            <label for="housenumber">House number</label>
+                            <input type="text" placeholder="House Number" 
+                                 asp-for="AddressLine2"  class="custom-borlft custom-hyper custom-padin w-100">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 mb-4">
+                        <div class="form-group d-flex flex-column">
+                            <label for="postalcode">Postal Code</label>
+                            <input type="text" placeholder="Postal Code"
+                                 asp-for="PostalCode"  class="custom-borlft custom-hyper custom-padin w-100">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group d-flex flex-column">
+                            <label for="city">City</label>
+                            <div class="d-inline-block">
+                                <select  id=""
+                                        class="custom-hyper custom-borlft custom-padin w-100" asp-for="City">
+                                    <option value="Ahmedabad">Ahmedabad</option>
+                                    <option value="baroda">baroda</option>
+                                    <option value="Rajkot">Rajkot</option>
+                                    <option value="Surat">Surat</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="form-group d-flex flex-column">
+                            <label for="phonenumber">Phone Number</label>
+                            <div class="d-flex">
+                                <input type="text" name="phonecode"
+                                       class="custom-borlft custom-hyper custom-padin" value="+49"
+                                       disabled style="max-width: 55px;">
+                                <input type="text" placeholder="Phone Number" 
+                                       class="custom-borlft minheight46 custom-padin"
+                                       asp-for="Mobile">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"
+                        class="custom-gnbtn rounded-pill custom-borlft text-light px-3 custom-padin">
+                    Save
+                </button>
+                <a role="button" class="btn border custom-hyper custom-padin rounded-pill"
+                   data-bs-toggle="collapse" href="#newAddressCollapse" aria-expanded="false"
+                   aria-controls="newAddressCollapse">
+                    Cancel
+                </a>
+            </form>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="rounded-pill cudtom-gnbtn1 my-2 text-light"
+                    onclick="$('#yourDetailsForm').submit();">
+                Continue
+            </button>
+        </div>
+   
